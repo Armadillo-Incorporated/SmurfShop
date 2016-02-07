@@ -1,13 +1,13 @@
 <?php
 
-Route::get('/', function () {
-    return view('pages.home');
-});
-
-Route::resource('account', 'AccountController');
+Route::get('/', 'AccountsController@index');
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    // Route::get('/home', 'HomeController@index');
+    Route::resource('accounts', 'AccountsController');
+
+    Route::resource('digits', 'DigitsController');
+
+    Route::resource('ranks', 'RanksController');
 });

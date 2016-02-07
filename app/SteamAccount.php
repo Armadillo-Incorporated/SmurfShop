@@ -30,7 +30,7 @@ class SteamAccount extends Model
      * @return void
      */
     public function email_account() {
-        return $this->hasOne('CanRover\EmailAccount');
+        return $this->hasOne('App\EmailAccount');
     }
 
     /**
@@ -39,7 +39,7 @@ class SteamAccount extends Model
      * @return void
      */
     public function digits() {
-        return $this->belongsTo('CanRover\Digit')
+        return $this->belongsTo('App\Digit');
     }
 
     /**
@@ -48,6 +48,6 @@ class SteamAccount extends Model
      * @return void
      */
     public function rank() {
-        return $this->belongsTo('CanRover\Rank')
+        return $this->belongsTo('App\Rank');
     }
 }

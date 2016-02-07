@@ -25,6 +25,6 @@ class EmailAccount extends Model
     ];
 
     public function steam_account() {
-        return $this->belongsTo('CanRover\SteamAccount');
+        return $this->belongsTo('App\SteamAccount');
     }
 }

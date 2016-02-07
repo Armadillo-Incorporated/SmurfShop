@@ -12,7 +12,7 @@ class Rank extends Model
      * @var array
      */
     protected $fillable = [
-        'ranks',
+        'rank',
     ];
 
     /**
@@ -21,7 +21,7 @@ class Rank extends Model
      * @return void
      */
     public function digits() {
-        return $this->hasMany('CanRover\Digit');
+        return $this->hasMany('App\Digit');
     }
 
     /**
@@ -30,6 +30,6 @@ class Rank extends Model
      * @return void
      */
     public function steam_account() {
-        return $this->hasMany('CanRover\SteamAccount');
+        return $this->hasMany('App\SteamAccount');
     }
 }

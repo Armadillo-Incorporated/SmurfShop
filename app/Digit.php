@@ -21,7 +21,7 @@ class Digit extends Model
      * @return void
      */
     public function Rank() {
-        return $this->belongsToMany('CanRover\Rank');
+        return $this->belongsToMany('App\Rank');
     }
 
     /**
@@ -30,6 +30,6 @@ class Digit extends Model
      * @return void
      */
     public function steam_account() {
-        return $this->hasMany('CanRover\SteamAccount');
+        return $this->hasMany('App\SteamAccount');
     }
 }
