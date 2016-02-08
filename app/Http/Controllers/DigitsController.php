@@ -16,8 +16,12 @@ class DigitsController extends Controller
     }
 
     public function store(Request $request) {
+        $this->validate($request, [
+            'digits' => 'required|unique:digits',
+        ]);
+        
         Digit::create($request->all());
 
-        return redirect(url(''));
+        return redirect(url('/dashboard'));
     }
 }

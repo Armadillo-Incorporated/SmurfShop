@@ -21,7 +21,7 @@ class Rank extends Model
      * @return void
      */
     public function digits() {
-        return $this->hasMany('App\Digit');
+        return $this->belongsToMany('App\Digit');
     }
 
     /**

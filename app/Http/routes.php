@@ -1,9 +1,11 @@
 <?php
 
-Route::get('/', 'AccountsController@index');
-
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
+
+    Route::get('/', 'AccountsController@index');
+
+    Route::get('dashboard', 'AccountsController@dashboard');
 
     Route::resource('accounts', 'AccountsController');
 

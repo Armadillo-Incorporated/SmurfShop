@@ -21,7 +21,7 @@ class CreateSteamAccountsTable extends Migration
             $table->foreign('rank_id')->references('id')->on('ranks')->onDelete('cascade');
             $table->string('username')->unique();
             $table->string('password', 60);
-            $table->string('active')->default(1);
+            $table->integer('active')->default(1);
             $table->timestamps();
         });
     }

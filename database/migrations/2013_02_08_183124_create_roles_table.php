@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDigitsTable extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,9 @@ class CreateDigitsTable extends Migration
      */
     public function up()
     {
-        Schema::create('digits', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('digits');
-            $table->timestamps();
+            $table->string('role');
         });
     }
 
@@ -26,6 +25,6 @@ class CreateDigitsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('digits');
+        Schema::drop('roles');
     }
 }

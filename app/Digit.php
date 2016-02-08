@@ -20,7 +20,7 @@ class Digit extends Model
      * 
      * @return void
      */
-    public function Rank() {
+    public function rank() {
         return $this->belongsToMany('App\Rank');
     }
 

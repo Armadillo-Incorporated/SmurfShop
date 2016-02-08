@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
+<div class="container">
     <div class="row">
         <div class="col-xs-offset-1 col-xs-10">
             <div class="jumbotron">
@@ -9,6 +10,7 @@
             </div>
         </div>
     </div>
+</div>
 @stop
 
 @section('content')
@@ -23,33 +25,39 @@
             </div>
         </div>
     </div>
-
+    @foreach ($ranks as $rank)
     <div class="row">
         <div class="col-xs-offset-1 col-xs-10">
+            <h3>{{ $rank->rank }}</h3>
+            <hr>
             <div class="well bs-component">
-                <h3>CS:GO Accounts<a class="btn btn-primary pull-right" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="csgoaccs">Buy now</a></h3>
-                <div class="collapse" id="csgoaccs">
-                <div class="well">
-                    <h4>Private Rank 3 <a href="#" class="btn btn-info pull-right" role="button">Buy now</a></h4>
-                    </div>
+                <div class="row">
+                    @foreach ($rank->digits as $digits)
+                        <div class="col-xs-12">
+                            <table>
+                                <h3>{{ $digits->digits }} Digit</h3>
+                                <thead>
+                                    <tr>
+                                        <th>Steam ID</th>
+                                        <th>Username</th>
+                                        <th><i class="fa fa-shopping-cart"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($digits->steam_account->where('active', 1)->where('rank_id', $rank->id) as $steam_account)
+                                        <tr>
+                                            <td>{{ $steam_account->steam_id }}</td>
+                                            <td>{{ $steam_account->username }}</td>
+                                            <td><a href="#" class="btn btn-info" role="button">Buy now</a></td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
-    
-    <div class="row">
-        <div class="col-xs-offset-1 col-xs-10">
-            <div class="well bs-component">
-                <h3>Low Digit Accounts<a class="btn btn-primary pull-right" role="button" data-toggle="collapse" href="#lowdig" aria-expanded="false" aria-controls="lowdig">Buy now</a></h3>
-                <div class="collapse" id="lowdig">
-                    <h4>6 Digit
-                        <a href="#" class="btn btn-info pull-right" role="button">Buy now</a>
-                    </h4>
-                    <br />
-                    <h4>7 Digit
-                    <a href="#" class="btn btn-info pull-right" role="button">Buy now</a></h4>
-                </div>
-            </div>
-        </div>
-    </div>
+    @endforeach
 @endsection

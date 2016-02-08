@@ -1,6 +1,8 @@
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import"https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css";
 
+@import 'bootstrap';
 @import 'mixins/BEM';
+@import 'components/table';
 
 .jumbotron {
     p {
@@ -10,8 +12,7 @@
         font-size: 40px;
     }
 }
- footer {
-    padding: 20px 0px; 
-    background-color: #f8f8f8;
-    border-top: 1px solid #e7e7e7;
- }
+
+h3 {
+    margin-bottom: 30px;
+} 

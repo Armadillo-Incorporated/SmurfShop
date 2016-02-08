@@ -25,12 +25,12 @@ class AccountRequest extends Request
     {
         return [
             'steam_id' => 'required|unique:steam_accounts',
-            'username' => 'required|unique:steam_accounts',
-            'steam_password' => 'required|confirmed',
-            'digits' => 'exists:digits,digits',
-            'rank' => 'exists:ranks,rank',
+            'username' => 'required|unique:steam_accounts|regex:/^[a-z0-9_-]{3,16}$/',
+            'steam_password' => 'required|confirmed|between:6,60',
+            'digits' => 'required|exists:digits',
+            'rank' => 'required|exists:ranks',
             'email' => 'required|email|unique:email_accounts',
-            'email_password' => 'required|confirmed',
+            'email_password' => 'required|confirmed|between:6,60',
         ];
     }
 }

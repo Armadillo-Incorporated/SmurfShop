@@ -24,6 +24,8 @@ class EmailAccount extends Model
         'password',
     ];
 
+    public $timestamps = false;
+
     public function steam_account() {
         return $this->belongsTo('App\SteamAccount');
     }

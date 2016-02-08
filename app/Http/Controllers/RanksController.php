@@ -16,8 +16,12 @@ class RanksController extends Controller
     }
 
     public function store(Request $request) {
+        $this->validate($request, [
+            'rank' => 'required|unique:ranks',
+        ]);
+        
         Rank::create($request->all());
 
-        return redirect(url(''));
+        return redirect(url('/dashboard'));
     }
 }

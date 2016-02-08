@@ -11,11 +11,25 @@
 |
 */
 
+use App\Rank;
+use App\Digit;
+
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,
         'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(App\User::class, function (Faker\Generator $faker) {
+    return [
+        'steam_id' => $faker->between(4, 10), 
+        'username' => $faker->username,
+        'steam_password' => bcrypt(str_random(10)),
+        'steam_password' => $faker->between(4, 10),
+        'email' => $faker->email,
+        'email_password' => bcrypt(str_random(10)),
     ];
 });

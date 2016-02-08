@@ -159,7 +159,7 @@
         
         <div class="col-md-8 col-md-offset-2">
             <button type="submit" class="btn btn-primary" style="width: 100%">
-                <i class="fa fa-btn fa-user"></i>Create
+                <i class="fa fa-btn fa-user"></i>  Create
             </button>
         </div>                      
     </div>
